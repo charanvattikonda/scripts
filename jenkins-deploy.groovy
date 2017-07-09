@@ -1,17 +1,10 @@
-def WORKSPACE = pwd()
-
+def BRANCH_NAME = 'master'
 node {
-    stage('Git Pull') {
-        sh ("""
-            cd $WORKSPACE
-            git clone https://github.com/charanvattikonda/scripts
-        """)
-    }
-
-    stage('Script stage') {
-        sh ("""
-            cd scripts 
-            sh -x jenkins-tester.sh                           
-        """)
+    stage('block') {
+        if (env.BRANCH_NAME == 'master') {
+            echo 'I only execute on the master branch'
+        } else {
+            echo 'I execute elsewhere'
+        }
     }
 }
