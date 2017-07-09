@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-name='charan'
-
-echo '#######################################################'
+'echo '#######################################################'
 
 echo "This is a jenkins test-scrpit and written by '${name}'"
 
